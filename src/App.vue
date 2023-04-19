@@ -20,22 +20,25 @@ export default {
       store
     }
   },
+  mounted() {
+    this.apiClaim();
+  },
   methods: {
     apiClaim() {
-      const param={
+      const params={
         api_key : this.store.key,
-        query: "f"
+        query: "a"
       }
       axios.get(store.moviesURL,{params}).then((resp)=>{
         this.store.movies = resp.data.results
         console.log(resp.data.results)
         console.log("movies")
-      })
+      });
       axios.get(store.seriesURL,{params}).then((resp)=>{
         this.store.series = resp.data.results
         console.log(resp.data.results)
         console.log("series")
-      })
+      });
     }
   }
 }
@@ -49,6 +52,6 @@ export default {
 <AppFooter />
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use "./style/general.scss"
 </style>

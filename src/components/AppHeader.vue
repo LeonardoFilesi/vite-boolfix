@@ -3,8 +3,8 @@
 </script>
 
 <template>
-    <div class="container-fluid ms_flex">
-        <a class="navbar-brand" href="#">BoolFlix</a>
+    <div class="container-fluid ms_flex ms_bg-black">
+        <div class="ms_flex"><h1 class="ms_white">Bool</h1><h1 class="ms_red">Flix</h1></div>
         <div>
             <input class="form-control me-2" type="search" placeholder="Cerca Film o Serie" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Cerca</button>
@@ -16,6 +16,16 @@
 .ms_flex {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
+.ms_white {
+    color: white;
+}
+.ms_red {
+    color: red;
+}
+.ms_bg-black {
+    background-color: black;
+}
 </style>
