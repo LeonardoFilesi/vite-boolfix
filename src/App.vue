@@ -46,13 +46,6 @@ export default {
       }).then((resp)=> {
           console.log(resp);
       })
-
-     /*  axios.get(store.seriesURL,{params}).then((resp)=>{
-        this.store.series = resp.data.results
-        console.log(resp.data.results)
-        console.log("series")
-      }); */
-      /* CORREZIONE */
       axios.get(`${this.store.seriesURL}/search/tv`, {
         params: {
           api_key: this.store.key,
@@ -61,7 +54,16 @@ export default {
       }).then((resp)=> {
         console.log(resp);
       })
-    } /* apiClaim END */
+    },
+  /*   searchMovies: function(searchValue) {
+            this.movies.forEach(movie => {
+                if(contact.name.toLowerCase().includes(searchValue.toLowerCase())) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
+        }, */
   }
 }
 </script>
