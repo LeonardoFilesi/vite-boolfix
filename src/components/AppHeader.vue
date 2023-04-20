@@ -1,5 +1,15 @@
 <script>
+import {store} from "../store";
 
+export default {
+    name: "AppHeader",
+    emits: ["search"],
+    data() {
+        return {
+            store
+        }
+    }
+}
 </script>
 
 <template>
@@ -7,7 +17,7 @@
         <div class="ms_flex"><h1 class="ms_white">Bool</h1><h1 class="ms_red">Flix</h1></div>
         <div>
             <input class="form-control me-2" type="search" placeholder="Cerca Film o Serie" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Cerca</button>
+            <button @click="$emit('search')" class="btn btn-outline-success" type="submit">Cerca</button>
         </div>
     </div>
 </template>
