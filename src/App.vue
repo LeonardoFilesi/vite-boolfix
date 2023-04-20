@@ -15,24 +15,18 @@ export default {
     AppCard,
     AppFooter,
   },
+
   data() {
     return {
       store
     }
   },
-  /* mounted() {
-    this.apiClaim();
-  }, */
+
   methods: {
     performSearch() {
       this.apiClaim()
     },
     apiClaim() {
-      const params={
-        api_key : this.store.key,
-        query: "a"
-      }
-
       axios
       .get(`${this.store.moviesURL}`, {
         params: {
@@ -55,15 +49,6 @@ export default {
         console.log(this.store.series)
       })
     },
-  /*   searchMovies: function(searchValue) {
-            this.movies.forEach(movie => {
-                if(contact.name.toLowerCase().includes(searchValue.toLowerCase())) {
-                    contact.visible = true;
-                } else {
-                    contact.visible = false;
-                }
-            });
-        }, */
   }
 }
 </script>

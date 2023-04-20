@@ -1,7 +1,7 @@
 <script>
 import {store} from "../store";
 import AppCard from "./AppCard.vue";
-
+import AppCardSeries from "./AppCardSeries.vue"
 export default {
     name: "AppMain",
     data() {
@@ -10,17 +10,22 @@ export default {
         }
     },
     components: {
-    AppCard
+    AppCard,
+    AppCardSeries
     }
 }
 </script>
 
 <template>
-    <div class="movies-bar container">
-        <div v-for="(movie, index) in store.movies" :key="index"></div>
+    <div class="movies-bar d-flex container">
+        <div v-for="(movie, index) in store.movies" :key="index">
+            <AppCard :movie="movie"/>
+        </div>
     </div>
-    <div class="series-bar">
-        <div v-for="(serie, index) in store.series" :key="index"></div>
+    <div class="series-bar d-flex container">
+        <div v-for="(serie, index) in store.series" :key="index">
+            <AppCardSeries :serie="serie"/>
+        </div>
     </div>
 </template>
 
