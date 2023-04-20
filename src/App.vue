@@ -20,9 +20,9 @@ export default {
       store
     }
   },
-  mounted() {
+  /* mounted() {
     this.apiClaim();
-  },
+  }, */
   methods: {
     performSearch() {
       this.apiClaim()
@@ -31,28 +31,28 @@ export default {
       const params={
         api_key : this.store.key,
         query: "a"
-      };
-    /* axios.get(store.moviesURL,{params}).then((resp)=>{
-        this.store.movies = resp.data.results
-        console.log(resp.data.results)
-        console.log("movies")
-        }); */
-      /* CORREZIONE */
-      axios.get(`${this.store.moviesURL}/search/movie`, {
+      }
+
+      axios
+      .get(`${this.store.moviesURL}`, {
         params: {
           api_key: this.store.key,
           query: this.store.searchKey
         }
-      }).then((resp)=> {
-          console.log(resp);
+        /* if(this.store.searchKey) { console.log(this.store.searchKey); params.search = this.store.searchKey;} */
       })
-      axios.get(`${this.store.seriesURL}/search/tv`, {
+      .then((resp)=> {
+        this.store.movies = resp.data.results
+        console.log(this.store.movies)
+      })
+      axios.get(`${this.store.seriesURL}`, {
         params: {
           api_key: this.store.key,
           query: this.store.searchKey
         }
       }).then((resp)=> {
-        console.log(resp);
+        this.store.series = resp.data.results
+        console.log(this.store.series)
       })
     },
   /*   searchMovies: function(searchValue) {
@@ -70,7 +70,7 @@ export default {
 
 <template>
 <AppHeader @search="performSearch"/>
-<AppSearchbar />
+<!-- <AppSearchbar /> -->
 <AppMain />
 <!-- <AppCard :movie="in movie" /> -->
 <AppFooter />
