@@ -15,7 +15,7 @@ export default {
 <template>
     <div class="container-fluid ms_flex ms_bg-black">
         <div class="ms_flex"><h1 class="ms_white">Bool</h1><h1 class="ms_red">Flix</h1></div>
-        <div>
+        <div class="ms_flex">
             <input type="text"
                         class="form-control me-3"
                         placeholder="Cerca Film o Serie"
@@ -31,6 +31,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .ms_white {

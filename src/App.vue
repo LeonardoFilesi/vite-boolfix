@@ -33,7 +33,6 @@ export default {
           api_key: this.store.key,
           query: this.store.searchKey
         }
-        /* if(this.store.searchKey) { console.log(this.store.searchKey); params.search = this.store.searchKey;} */
       })
       .then((resp)=> {
         this.store.movies = resp.data.results
