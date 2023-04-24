@@ -10,6 +10,21 @@ export default {
         return {
             store
         }
+    },
+    methods: {
+        switchLanguage(lang) {
+            switch(lang) {
+                case "en":
+                    return "GB";
+                case "ja":
+                    return "JP";
+                case "ko":
+                    return "KR";
+                case "cs":
+                    return "CZ";
+            }
+        return lang.toUpperCase();
+        }
     }
 }
 </script>
@@ -21,7 +36,8 @@ export default {
         <div class="ms_info-section card-img-overlay">
             <h5 class="card-title">{{ movie.title }}</h5>
             <p class="card-text">{{ movie.original_title }}</p>
-            <p class="card-text"><small>{{ movie.original_language }}</small></p>
+            <img :src="'https://purecatamphetamine.github.io/country-flag-icons/3x2/' +switchLanguage(movie.original_language) + '.svg'" alt="language" class="ms_language">
+            <!-- <p class="card-text"><small>{{ movie.original_language }}</small></p> -->
             <p class="card-text"><small>{{ movie.vote_average }}</small></p>
         </div>
     </div>
@@ -35,6 +51,10 @@ export default {
 }
 .ms_card:hover .ms_info-section{
     opacity: 1;
+}
+
+.ms_language {
+    height: 20px;
 }
 
 </style>
