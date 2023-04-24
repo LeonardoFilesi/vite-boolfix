@@ -16,7 +16,7 @@ export default {
 
 <template>
     <div class="card text-bg-dark">
-        <img src="" class="card-img" alt="">
+        <img :src="'https://image.tmdb.org/t/p/w342' + serie.poster_path" class="card-img" alt="">
         <div class="card-img-overlay">
         <h5 class="card-title">{{ serie.name }}</h5>
         <p class="card-text">{{ serie.original_name }}</p>

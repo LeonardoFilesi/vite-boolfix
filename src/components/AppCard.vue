@@ -15,8 +15,8 @@ export default {
 </script>
 
 <template>
-        <img src="" class="card-img" alt="">
-        <div class="card-img-overlay">
+        <img :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" class="card-img" alt="">
+        <div class="ms_info-section card-img-overlay">
             <h5 class="card-title">{{ movie.title }}</h5>
             <p class="card-text">{{ movie.original_title }}</p>
             <p class="card-text"><small>{{ movie.original_language }}</small></p>
@@ -25,5 +25,13 @@ export default {
 </template>
 
 <style scoped lang="scss">
+/* .ms_info-section {
+    display: none;
+
+    &:hover {
+        display: contents;
+    }
+}
+ */
 
 </style>

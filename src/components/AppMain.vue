@@ -18,7 +18,7 @@ export default {
 
 <template>
     <div class="movies-bar d-flex ms_container">
-        <div v-for="(movie, index) in store.movies" :key="index" class="ms_card card text-bg-dark">
+        <div v-for="(movie, index) in store.movies" :key="index" class="ms_card card text-bg-dark me-4 w-50">
             <AppCard :movie="movie"/>
         </div>
     </div>
@@ -32,19 +32,22 @@ export default {
 <style scoped lang="scss">
 .movies-bar {
     overflow-x: auto;
+    overflow-y: hidden;
 }
 .series-bar {
     overflow-x: auto;
+    overflow-y: hidden;
 }
 .ms_container {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 30px;
+    height: 500px;
 }
 .ms_card {
-    min-width: 150px;
+    min-width: 300px;
     color: black;
     margin-bottom: 30px;
-    height: 30vh;
+    /* height: 100%; */
 }
 </style>
