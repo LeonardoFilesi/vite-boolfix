@@ -17,26 +17,36 @@ export default {
 </script>
 
 <template>
-    <div class="movies-bar d-flex ms_container">
-        <div v-for="(movie, index) in store.movies" :key="index" class="ms_card card text-bg-dark me-4 w-50">
-            <AppCard :movie="movie"/>
+    <div class="d-flex">
+        <h3>Movies list:</h3>
+        <div class="ms_movies-bar d-flex ms_container">
+            <div v-for="(movie, index) in store.movies" :key="index" class="ms_card-container card text-bg-dark me-4 w-50">
+                <AppCard :movie="movie"/>
+            </div>
         </div>
     </div>
-    <div class="series-bar d-flex ms_container">
-        <div v-for="(serie, index) in store.series" :key="index" class="ms_card card text-bg-dark">
-            <AppCardSeries :serie="serie"/>
+    <div class="d-flex">
+        <h3>Series list:</h3>
+        <div class="ms_series-bar d-flex ms_container">
+            <div v-for="(serie, index) in store.series" :key="index" class="ms_card-container card text-bg-dark">
+                <AppCardSeries :serie="serie"/>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
-.movies-bar {
+.ms_movies-bar {
     overflow-x: auto;
     overflow-y: hidden;
+    margin-bottom: 30px;
+    width: 100%;
 }
-.series-bar {
+.ms_series-bar {
     overflow-x: auto;
     overflow-y: hidden;
+    margin-bottom: 30px;
+    width: 100%;
 }
 .ms_container {
     width: 80%;
@@ -44,10 +54,14 @@ export default {
     margin-bottom: 30px;
     height: 500px;
 }
-.ms_card {
+.ms_card-container {
     min-width: 300px;
     color: black;
     margin-bottom: 30px;
     /* height: 100%; */
+}
+
+h3 {
+    color: white;
 }
 </style>

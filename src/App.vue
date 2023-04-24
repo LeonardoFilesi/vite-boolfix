@@ -61,5 +61,12 @@ export default {
 </template>
 
 <style lang="scss">
-@use "./style/general.scss"
+@use "./style/general.scss";
+#app{
+  background-color: black;
+}
+
+.ms_card{
+  cursor: pointer;
+}
 </style>
